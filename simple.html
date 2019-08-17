@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo</title>
+    </head>
+    <body>
+    	<h3>Paste QR Code </h3>
+        <hr>
+        <canvas></canvas>
+        <hr>
+        <ul></ul>
+        <script type="text/javascript" src="js/qrcodelib.js"></script>
+        <script type="text/javascript" src="js/webcodecamjs.js"></script>
+        <script type="text/javascript">
+        	var txt = "innerText" in HTMLElement.prototype ? "innerText" : "textContent";
+            var arg = {
+                resultFunction: function(result) {
+                	var aChild = document.createElement('li');
+                	aChild[txt] = result.format + ': ' + result.code;
+                    document.querySelector('body').appendChild(aChild);
+                    if(result.code === 'KETUK PINTU'){
+                        window.location.href = "http://www.github.com";
+                    } else {
+                        window.location.href = "http://www.google.com";
+
+                    }
+                }
+            };
+            new WebCodeCamJS("canvas").init(arg).play();
+        </script>
+    </body>
+</html>
