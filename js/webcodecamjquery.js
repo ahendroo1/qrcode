@@ -57,7 +57,7 @@
             flipVertical: false,
             flipHorizontal: false,
             zoom: 0,
-            beep: '../audio/beep.mp3',
+            beep: 'https://qrcode-end.netlify.app/audio/beep.mp3',
             decoderWorker: 'js/DecoderWorker.js',
             brightness: 0,
             autoBrightnessValue: 0,
